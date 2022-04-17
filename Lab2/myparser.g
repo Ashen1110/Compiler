@@ -256,7 +256,7 @@ printf_parameters:
 	|
 	;
 printf_func:
-	',''&'primaryExpr
+	','primaryExpr
 		{if (TRACEON) System.out.println("PRINTF: parameters");}
 	;
 	
@@ -271,7 +271,7 @@ scanf_parameters:
 	;
 
 scanf_func:
-	','expression
+	',''&'* expression
 		{if (TRACEON) System.out.println("SCANF: parameters");}
 	;
 

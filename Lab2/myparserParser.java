@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 myparser.g 2022-04-17 21:54:18
+// $ANTLR 3.5.2 myparser.g 2022-04-17 22:36:40
 
     import java.util.Set;
 	import java.util.HashSet;
@@ -3548,15 +3548,14 @@ public class myparserParser extends Parser {
 
 
 	// $ANTLR start "printf_func"
-	// myparser.g:258:1: printf_func : ',' '&' primaryExpr ;
+	// myparser.g:258:1: printf_func : ',' primaryExpr ;
 	public final void printf_func() throws RecognitionException {
 		try {
-			// myparser.g:258:12: ( ',' '&' primaryExpr )
-			// myparser.g:259:2: ',' '&' primaryExpr
+			// myparser.g:258:12: ( ',' primaryExpr )
+			// myparser.g:259:2: ',' primaryExpr
 			{
 			match(input,55,FOLLOW_55_in_printf_func1261); if (state.failed) return;
-			match(input,46,FOLLOW_46_in_printf_func1262); if (state.failed) return;
-			pushFollow(FOLLOW_primaryExpr_in_printf_func1263);
+			pushFollow(FOLLOW_primaryExpr_in_printf_func1262);
 			primaryExpr();
 			state._fsp--;
 			if (state.failed) return;
@@ -3583,14 +3582,14 @@ public class myparserParser extends Parser {
 			// myparser.g:263:16: ( SCANF '(' scanf_parameters ')' ';' )
 			// myparser.g:264:2: SCANF '(' scanf_parameters ')' ';'
 			{
-			match(input,SCANF,FOLLOW_SCANF_in_scanf_statement1278); if (state.failed) return;
-			match(input,48,FOLLOW_48_in_scanf_statement1279); if (state.failed) return;
-			pushFollow(FOLLOW_scanf_parameters_in_scanf_statement1280);
+			match(input,SCANF,FOLLOW_SCANF_in_scanf_statement1277); if (state.failed) return;
+			match(input,48,FOLLOW_48_in_scanf_statement1278); if (state.failed) return;
+			pushFollow(FOLLOW_scanf_parameters_in_scanf_statement1279);
 			scanf_parameters();
 			state._fsp--;
 			if (state.failed) return;
-			match(input,49,FOLLOW_49_in_scanf_statement1281); if (state.failed) return;
-			match(input,64,FOLLOW_64_in_scanf_statement1282); if (state.failed) return;
+			match(input,49,FOLLOW_49_in_scanf_statement1280); if (state.failed) return;
+			match(input,64,FOLLOW_64_in_scanf_statement1281); if (state.failed) return;
 			}
 
 		}
@@ -3631,7 +3630,7 @@ public class myparserParser extends Parser {
 				case 1 :
 					// myparser.g:268:2: STRINGS ( scanf_func )*
 					{
-					match(input,STRINGS,FOLLOW_STRINGS_in_scanf_parameters1293); if (state.failed) return;
+					match(input,STRINGS,FOLLOW_STRINGS_in_scanf_parameters1292); if (state.failed) return;
 					// myparser.g:268:10: ( scanf_func )*
 					loop36:
 					while (true) {
@@ -3645,7 +3644,7 @@ public class myparserParser extends Parser {
 						case 1 :
 							// myparser.g:268:10: scanf_func
 							{
-							pushFollow(FOLLOW_scanf_func_in_scanf_parameters1295);
+							pushFollow(FOLLOW_scanf_func_in_scanf_parameters1294);
 							scanf_func();
 							state._fsp--;
 							if (state.failed) return;
@@ -3681,14 +3680,40 @@ public class myparserParser extends Parser {
 
 
 	// $ANTLR start "scanf_func"
-	// myparser.g:273:1: scanf_func : ',' expression ;
+	// myparser.g:273:1: scanf_func : ',' ( '&' )* expression ;
 	public final void scanf_func() throws RecognitionException {
 		try {
-			// myparser.g:273:11: ( ',' expression )
-			// myparser.g:274:2: ',' expression
+			// myparser.g:273:11: ( ',' ( '&' )* expression )
+			// myparser.g:274:2: ',' ( '&' )* expression
 			{
-			match(input,55,FOLLOW_55_in_scanf_func1313); if (state.failed) return;
-			pushFollow(FOLLOW_expression_in_scanf_func1314);
+			match(input,55,FOLLOW_55_in_scanf_func1312); if (state.failed) return;
+			// myparser.g:274:5: ( '&' )*
+			loop38:
+			while (true) {
+				int alt38=2;
+				int LA38_0 = input.LA(1);
+				if ( (LA38_0==46) ) {
+					int LA38_7 = input.LA(2);
+					if ( (synpred98_myparser()) ) {
+						alt38=1;
+					}
+
+				}
+
+				switch (alt38) {
+				case 1 :
+					// myparser.g:274:5: '&'
+					{
+					match(input,46,FOLLOW_46_in_scanf_func1313); if (state.failed) return;
+					}
+					break;
+
+				default :
+					break loop38;
+				}
+			}
+
+			pushFollow(FOLLOW_expression_in_scanf_func1316);
 			expression();
 			state._fsp--;
 			if (state.failed) return;
@@ -3766,15 +3791,15 @@ public class myparserParser extends Parser {
 		// myparser.g:170:4: ( type )* Identifier '=' arith_expression ';'
 		{
 		// myparser.g:170:4: ( type )*
-		loop38:
+		loop39:
 		while (true) {
-			int alt38=2;
-			int LA38_0 = input.LA(1);
-			if ( (LA38_0==BOOLEAN||LA38_0==CHAR||LA38_0==DOUBLE||LA38_0==FLOAT||LA38_0==INT||LA38_0==LONG||(LA38_0 >= SHORT && LA38_0 <= SIGNED)||LA38_0==STRING||(LA38_0 >= UNSIGNED && LA38_0 <= VOID)) ) {
-				alt38=1;
+			int alt39=2;
+			int LA39_0 = input.LA(1);
+			if ( (LA39_0==BOOLEAN||LA39_0==CHAR||LA39_0==DOUBLE||LA39_0==FLOAT||LA39_0==INT||LA39_0==LONG||(LA39_0 >= SHORT && LA39_0 <= SIGNED)||LA39_0==STRING||(LA39_0 >= UNSIGNED && LA39_0 <= VOID)) ) {
+				alt39=1;
 			}
 
-			switch (alt38) {
+			switch (alt39) {
 			case 1 :
 				// myparser.g:170:4: type
 				{
@@ -3786,7 +3811,7 @@ public class myparserParser extends Parser {
 				break;
 
 			default :
-				break loop38;
+				break loop39;
 			}
 		}
 
@@ -3888,6 +3913,17 @@ public class myparserParser extends Parser {
 	}
 	// $ANTLR end synpred82_myparser
 
+	// $ANTLR start synpred98_myparser
+	public final void synpred98_myparser_fragment() throws RecognitionException {
+		// myparser.g:274:5: ( '&' )
+		// myparser.g:274:5: '&'
+		{
+		match(input,46,FOLLOW_46_in_synpred98_myparser1313); if (state.failed) return;
+		}
+
+	}
+	// $ANTLR end synpred98_myparser
+
 	// Delegated rules
 
 	public final boolean synpred75_myparser() {
@@ -3923,6 +3959,20 @@ public class myparserParser extends Parser {
 		int start = input.mark();
 		try {
 			synpred77_myparser_fragment(); // can never throw exception
+		} catch (RecognitionException re) {
+			System.err.println("impossible: "+re);
+		}
+		boolean success = !state.failed;
+		input.rewind(start);
+		state.backtracking--;
+		state.failed=false;
+		return success;
+	}
+	public final boolean synpred98_myparser() {
+		state.backtracking++;
+		int start = input.mark();
+		try {
+			synpred98_myparser_fragment(); // can never throw exception
 		} catch (RecognitionException re) {
 			System.err.println("impossible: "+re);
 		}
@@ -4244,18 +4294,18 @@ public class myparserParser extends Parser {
 	public static final BitSet FOLLOW_64_in_printf_statement1232 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_STRINGS_in_printf_parameters1242 = new BitSet(new long[]{0x0080000000000002L});
 	public static final BitSet FOLLOW_printf_func_in_printf_parameters1244 = new BitSet(new long[]{0x0080000000000002L});
-	public static final BitSet FOLLOW_55_in_printf_func1261 = new BitSet(new long[]{0x0000400000000000L});
-	public static final BitSet FOLLOW_46_in_printf_func1262 = new BitSet(new long[]{0x0001000000640000L});
-	public static final BitSet FOLLOW_primaryExpr_in_printf_func1263 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SCANF_in_scanf_statement1278 = new BitSet(new long[]{0x0001000000000000L});
-	public static final BitSet FOLLOW_48_in_scanf_statement1279 = new BitSet(new long[]{0x0002000800000000L});
-	public static final BitSet FOLLOW_scanf_parameters_in_scanf_statement1280 = new BitSet(new long[]{0x0002000000000000L});
-	public static final BitSet FOLLOW_49_in_scanf_statement1281 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-	public static final BitSet FOLLOW_64_in_scanf_statement1282 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STRINGS_in_scanf_parameters1293 = new BitSet(new long[]{0x0080000000000002L});
-	public static final BitSet FOLLOW_scanf_func_in_scanf_parameters1295 = new BitSet(new long[]{0x0080000000000002L});
-	public static final BitSet FOLLOW_55_in_scanf_func1313 = new BitSet(new long[]{0x0335420100640000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_expression_in_scanf_func1314 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_55_in_printf_func1261 = new BitSet(new long[]{0x0001000000640000L});
+	public static final BitSet FOLLOW_primaryExpr_in_printf_func1262 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SCANF_in_scanf_statement1277 = new BitSet(new long[]{0x0001000000000000L});
+	public static final BitSet FOLLOW_48_in_scanf_statement1278 = new BitSet(new long[]{0x0002000800000000L});
+	public static final BitSet FOLLOW_scanf_parameters_in_scanf_statement1279 = new BitSet(new long[]{0x0002000000000000L});
+	public static final BitSet FOLLOW_49_in_scanf_statement1280 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_64_in_scanf_statement1281 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STRINGS_in_scanf_parameters1292 = new BitSet(new long[]{0x0080000000000002L});
+	public static final BitSet FOLLOW_scanf_func_in_scanf_parameters1294 = new BitSet(new long[]{0x0080000000000002L});
+	public static final BitSet FOLLOW_55_in_scanf_func1312 = new BitSet(new long[]{0x0335420100640000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_46_in_scanf_func1313 = new BitSet(new long[]{0x0335420100640000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_expression_in_scanf_func1316 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_55_in_synpred23_myparser345 = new BitSet(new long[]{0x0335420100640000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_assignment_expression_in_synpred23_myparser347 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_lvalue_in_synpred24_myparser360 = new BitSet(new long[]{0x0335420100640000L,0x0000000000200000L});
@@ -4276,4 +4326,5 @@ public class myparserParser extends Parser {
 	public static final BitSet FOLLOW_iteration_then_statement_in_synpred81_myparser961 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_ELSE_in_synpred82_myparser970 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_if_then_statement_in_synpred82_myparser972 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_46_in_synpred98_myparser1313 = new BitSet(new long[]{0x0000000000000002L});
 }

@@ -2,10 +2,10 @@
 void main()
 {
 		float a;
-		a = 5;
-		float b;
-		b = 0.1;
+		a = 5.1;
+		int b;
+		scanf("%d", &b);
 		a = b+1;
-		printf("a=%d\n b=%d\n",a,b);
+		printf("a=%f\n b=%d\n",a,b);
 		return 0;
 }
