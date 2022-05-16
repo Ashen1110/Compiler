@@ -10,7 +10,3 @@
 1. makefile 提供 make clean 的功能
 2. 在 terminal 上打 make clean 之後可以清除中間所有產生的檔案 
 3. *.tokens, myInterpLexer.java, myInterpParser.java, *.class
-
-測試程式：
-1. 
-
